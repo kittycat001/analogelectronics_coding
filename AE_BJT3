@@ -1,0 +1,16 @@
+import math
+def calculate_rc(vcc,vbe,ib):
+  return(vcc-vbe)/ib
+def calculate_rb(vcc,vbe,beta,rf,re):
+  return(vcc-vbe)/(rf+beta*(rc+re))
+if __name__ =="__main__":
+    vcc=float(input("Enter the supply voltage:"))
+    vbe=float(input ("Enter the base-emitter voltage:"))
+    beta=float(input ("Enter the beta value of transistor:"))
+    ib=float(input ("Enter the base current:"))
+    re=float(input ("Enter the emitter resistance:"))
+    rf=float(input ("Enter the feedback resistance:"))
+rc= calculate_rc(vcc,vbe,ib)
+print ("The value of Rc is {} ohms,",format(rc))
+rb= calculate_rb(vcc,vbe,beta,rf,re)
+print ("The value of Rb is {} ohms,",format(rb))
