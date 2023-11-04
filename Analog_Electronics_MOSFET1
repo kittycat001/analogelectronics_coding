@@ -1,0 +1,13 @@
+def calculate_vgs(vgg):
+  return(+vgg)
+def calculate_vds(vdd,id,rs):
+  return(vdd-(id*rs))
+if __name__ =="__main__":
+    vgs=float(input("Enter the gate to source voltage:"))
+    vdd=float(input("Enter the drain voltage voltage:"))
+    id=float(input ("Enter the drain current:"))
+    rs=float(input ("Enter the source resistance:"))
+vgs= calculate_vgs(vgs)
+print ("The value of vgs is {} v,",format(vgs))
+vds= calculate_vds(vdd,id,rs)
+print ("The value of vds is {} v,",format(vds))
