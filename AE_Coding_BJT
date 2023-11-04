@@ -1,0 +1,16 @@
+import math
+def calculate_rc(vcc, vbe,ib):
+  return(vcc-vbe)/ib
+def calculate_rb(vcc,vbe,rc,beta):
+  return(vcc-vbe)/(ic/beta)
+if __name__ =="__main__":
+    vcc=float(input("Enter the supply voltage:"))
+    vce=float(input("Enter the collector-emitter voltage:"))
+    ic=float(input ("Enter the collector current:"))
+    vbe=float(input ("Enter the base-emitter voltage:"))
+    beta=float(input ("Enter the beta value of transistor:"))
+    ib=float(input ("Enter the base current:"))
+rc= calculate_rc(vcc,vce,ic)
+print ("The value of Rc is {} ohms,",format(rc))
+rb= calculate_rb(vcc,vbe,rc,beta)
+print ("The value of Rb is {} ohms,",format(rb))
